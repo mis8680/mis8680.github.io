@@ -10,7 +10,7 @@ PS3="$prompt"
 select opt in "${options[@]}" "Quit"; do 
     case "$REPLY" in
     1|2|3) 
-       echo "You picked $opt which is ${#options[@]}"
+       echo "You picked $opt"
        echo "==== Removing the existing remote $opt branch ===="
        git push --delete origin $opt
        echo "==== Removing the existing local $opt branch ===="
@@ -19,6 +19,8 @@ select opt in "${options[@]}" "Quit"; do
        git checkout -b $opt
        echo "==== Pushing $opt branch to orign ===="
        git push origin $opt
+       echo "==== Switching to the previous branch ===="
+       git checkout -
        echo "==== Done! ===="
        ;;
     $((${#options[@]}+1))) echo "Goodbye!"; break;;
