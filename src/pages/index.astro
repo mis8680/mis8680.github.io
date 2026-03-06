@@ -1,12 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
 import Nav from '../components/Nav.astro';
 ---
 
 <Layout title="Insu Mun | Portfolio">
 	<Nav />
-	<main class="mx-auto flex min-h-screen max-w-4xl px-6 pt-28">
+	<main class="mx-auto flex min-h-screen max-w-6xl px-6 pt-28">
 		<div class="flex w-full flex-col gap-8 pb-16">
+			<Hero />
 			<section
 				id="projects"
 				class="flex min-h-[calc(100vh-8rem)] items-center justify-center rounded-[2rem] border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-surface)_60%,transparent)] px-8 py-12 scroll-mt-28"
@@ -16,9 +18,9 @@ import Nav from '../components/Nav.astro';
 					<p class="text-xs font-semibold uppercase tracking-[0.32em] text-[color:var(--color-accent)]">
 						Projects
 					</p>
-					<h1 id="projects-heading" class="text-3xl font-semibold tracking-tight text-[color:var(--color-text)] sm:text-4xl">
+					<h2 id="projects-heading" class="text-3xl font-semibold tracking-tight text-[color:var(--color-text)] sm:text-4xl">
 						The site is coming together.
-					</h1>
+					</h2>
 					<p class="max-w-2xl text-sm leading-7 text-[color:var(--color-muted-text)] sm:text-base">
 						This placeholder marks the first portfolio section while the full project showcase is built in a later task.
 					</p>

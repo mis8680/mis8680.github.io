@@ -1,0 +1,171 @@
+---
+const focusAreas = [
+	{
+		title: 'Product direction',
+		description: 'Translating open-ended product goals into interfaces that feel crisp, intentional, and ready to ship.',
+	},
+	{
+		title: 'Systems thinking',
+		description: 'Building component patterns and visual rules that stay coherent as products and teams scale.',
+	},
+	{
+		title: 'Front-end craft',
+		description: 'Layering motion, performance, and detail so the final experience feels polished instead of merely functional.',
+	},
+];
+
+const socialLinks = [
+	{
+		href: 'https://github.com/mis8680',
+		label: 'GitHub',
+		external: true,
+	},
+	{
+		href: 'https://www.linkedin.com/in/insu-eric-mun',
+		label: 'LinkedIn',
+		external: true,
+	},
+	{
+		href: 'mailto:mis8680@gmail.com',
+		label: 'Email',
+		external: false,
+	},
+];
+---
+
+<section
+	data-hero
+	aria-labelledby="hero-heading"
+	style="--glow-x: 50%; --glow-y: 36%; --glow-opacity: 0.78;"
+	class="relative isolate flex min-h-[calc(100svh-8rem)] overflow-hidden rounded-[2.5rem] border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-surface)_90%,transparent)] px-6 py-8 shadow-[0_32px_100px_rgba(4,19,24,0.28)] sm:px-8 sm:py-10 lg:px-12 lg:py-12"
+>
+	<div aria-hidden="true" class="absolute inset-0">
+		<div class="absolute inset-0 bg-[linear-gradient(135deg,color-mix(in_srgb,var(--color-surface)_96%,transparent),color-mix(in_srgb,var(--color-background)_88%,transparent))]"></div>
+		<div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(94,234,212,0.16),transparent_28%),radial-gradient(circle_at_84%_12%,rgba(45,212,191,0.1),transparent_24%)]"></div>
+		<div
+			data-hero-glow
+			class="absolute inset-0 transition-opacity duration-300"
+			style="opacity: var(--glow-opacity); background: radial-gradient(circle 320px at var(--glow-x) var(--glow-y), rgba(45, 212, 191, 0.26), transparent 34%), radial-gradient(circle 180px at calc(var(--glow-x) + 7rem) calc(var(--glow-y) - 6rem), rgba(94, 234, 212, 0.12), transparent 32%);"
+		></div>
+		<div class="absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,transparent,rgba(94,234,212,0.4),transparent)]"></div>
+		<div class="absolute inset-y-8 right-[41%] hidden w-px bg-[linear-gradient(180deg,transparent,rgba(148,163,184,0.18),transparent)] lg:block"></div>
+	</div>
+
+	<div class="relative z-10 grid w-full gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(19rem,0.9fr)] lg:items-end">
+		<div class="flex flex-col justify-between gap-10">
+			<div class="space-y-6">
+				<div class="inline-flex w-fit items-center gap-2 rounded-full border border-[color:color-mix(in_srgb,var(--color-accent)_30%,var(--color-border))] bg-[color:color-mix(in_srgb,var(--color-background)_28%,transparent)] px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-[color:var(--color-accent)]">
+					<span class="h-2 w-2 rounded-full bg-[color:var(--color-accent)] shadow-[0_0_20px_rgba(45,212,191,0.8)]"></span>
+					Portfolio 2026
+				</div>
+
+				<div class="space-y-4">
+					<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[color:var(--color-accent)]">
+						Product Designer + Front-End Engineer
+					</p>
+					<h1
+						id="hero-heading"
+						class="max-w-4xl text-5xl font-semibold tracking-[-0.04em] text-[color:var(--color-text)] sm:text-6xl lg:text-7xl"
+					>
+						Insu Mun
+					</h1>
+					<p class="max-w-3xl text-lg leading-8 text-[color:var(--color-text)] sm:text-xl sm:leading-9">
+						I design and ship thoughtful digital experiences where structure, motion, and personality all pull in the same direction.
+					</p>
+					<p class="max-w-2xl text-sm leading-7 text-[color:var(--color-muted-text)] sm:text-base">
+						From product direction to production-ready interfaces, I like work that feels clear, expressive, and built with intent.
+					</p>
+				</div>
+			</div>
+
+			<div class="flex flex-col gap-6">
+				<div class="flex flex-wrap gap-3">
+					<a
+						href="#projects"
+						class="inline-flex items-center justify-center rounded-full border border-[color:var(--color-accent)] bg-[color:var(--color-accent)] px-5 py-3 text-sm font-semibold text-[color:var(--color-background)] transition hover:border-[color:var(--color-accent-hover)] hover:bg-[color:var(--color-accent-hover)]"
+					>
+						View Projects
+					</a>
+					<a
+						href="/resume.pdf"
+						class="inline-flex items-center justify-center rounded-full border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-background)_24%,transparent)] px-5 py-3 text-sm font-semibold text-[color:var(--color-text)] transition hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)]"
+					>
+						Resume
+					</a>
+				</div>
+
+				<div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+					<p class="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--color-muted-text)]">
+						Find me here
+					</p>
+					<div class="flex flex-wrap gap-2">
+						{
+							socialLinks.map(({ href, label, external }) => (
+								<a
+									href={href}
+									target={external ? '_blank' : undefined}
+									rel={external ? 'noreferrer' : undefined}
+									class="inline-flex items-center rounded-full border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-background)_18%,transparent)] px-4 py-2 text-sm font-medium text-[color:var(--color-text)] transition hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)]"
+								>
+									{label}
+								</a>
+							))
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="rounded-[2rem] border border-[color:color-mix(in_srgb,var(--color-accent)_22%,var(--color-border))] bg-[color:color-mix(in_srgb,var(--color-background)_28%,transparent)] p-6 backdrop-blur-sm sm:p-8">
+			<div class="space-y-6">
+				<div class="space-y-2">
+					<p class="text-xs font-semibold uppercase tracking-[0.32em] text-[color:var(--color-accent)]">
+						What I bring
+					</p>
+					<p class="text-sm leading-7 text-[color:var(--color-muted-text)]">
+						A blend of product thinking, visual systems, and implementation detail that keeps ideas feeling sharp all the way to launch.
+					</p>
+				</div>
+
+				<ul class="space-y-4">
+					{
+						focusAreas.map(({ title, description }) => (
+							<li class="rounded-[1.5rem] border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-surface)_74%,transparent)] p-4">
+								<p class="text-sm font-semibold text-[color:var(--color-text)]">{title}</p>
+								<p class="mt-2 text-sm leading-7 text-[color:var(--color-muted-text)]">{description}</p>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script is:inline>
+	const hero = document.querySelector('[data-hero]');
+
+	if (hero instanceof HTMLElement && hero.dataset.glowBound !== 'true') {
+		hero.dataset.glowBound = 'true';
+
+		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const supportsPointer = window.matchMedia('(pointer: fine)').matches;
+
+		const resetGlow = () => {
+			hero.style.setProperty('--glow-x', '50%');
+			hero.style.setProperty('--glow-y', '36%');
+			hero.style.setProperty('--glow-opacity', '0.78');
+		};
+
+		if (!prefersReducedMotion && supportsPointer) {
+			hero.addEventListener('pointermove', (event) => {
+				const rect = hero.getBoundingClientRect();
+				hero.style.setProperty('--glow-x', `${event.clientX - rect.left}px`);
+				hero.style.setProperty('--glow-y', `${event.clientY - rect.top}px`);
+				hero.style.setProperty('--glow-opacity', '1');
+			});
+
+			hero.addEventListener('pointerleave', resetGlow);
+		}
+	}
+</script>
