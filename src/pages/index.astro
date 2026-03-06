@@ -6,14 +6,58 @@ import Nav from '../components/Nav.astro';
 <Layout title="Insu Mun | Portfolio">
 	<Nav />
 	<main class="mx-auto flex min-h-screen max-w-4xl px-6 pt-28">
-		<div class="flex w-full flex-col gap-24 pb-16">
-			<section id="projects" class="flex min-h-[calc(100vh-8rem)] items-center justify-center scroll-mt-28">
-				<p class="text-center text-sm font-semibold uppercase tracking-[0.28em] text-[color:var(--color-accent)] sm:text-base">
-					The site is coming together.
-				</p>
+		<div class="flex w-full flex-col gap-8 pb-16">
+			<section
+				id="projects"
+				class="flex min-h-[calc(100vh-8rem)] items-center justify-center rounded-[2rem] border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-surface)_60%,transparent)] px-8 py-12 scroll-mt-28"
+				aria-labelledby="projects-heading"
+			>
+				<div class="space-y-4 text-center">
+					<p class="text-xs font-semibold uppercase tracking-[0.32em] text-[color:var(--color-accent)]">
+						Projects
+					</p>
+					<h1 id="projects-heading" class="text-3xl font-semibold tracking-tight text-[color:var(--color-text)] sm:text-4xl">
+						The site is coming together.
+					</h1>
+					<p class="max-w-2xl text-sm leading-7 text-[color:var(--color-muted-text)] sm:text-base">
+						This placeholder marks the first portfolio section while the full project showcase is built in a later task.
+					</p>
+				</div>
 			</section>
-			<section id="about" class="h-px scroll-mt-28" aria-hidden="true"></section>
-			<section id="contact" class="h-px scroll-mt-28" aria-hidden="true"></section>
+			<section
+				id="about"
+				class="rounded-[2rem] border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-surface)_40%,transparent)] px-6 py-8 scroll-mt-28"
+				aria-labelledby="about-heading"
+			>
+				<div class="space-y-3">
+					<p class="text-xs font-semibold uppercase tracking-[0.32em] text-[color:var(--color-accent)]">
+						About
+					</p>
+					<h2 id="about-heading" class="text-2xl font-semibold tracking-tight text-[color:var(--color-text)]">
+						About content placeholder
+					</h2>
+					<p class="max-w-2xl text-sm leading-7 text-[color:var(--color-muted-text)] sm:text-base">
+						This is a visible waypoint for the About section so navigation lands on real content before the full section is designed.
+					</p>
+				</div>
+			</section>
+			<section
+				id="contact"
+				class="rounded-[2rem] border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-surface)_40%,transparent)] px-6 py-8 scroll-mt-28"
+				aria-labelledby="contact-heading"
+			>
+				<div class="space-y-3">
+					<p class="text-xs font-semibold uppercase tracking-[0.32em] text-[color:var(--color-accent)]">
+						Contact
+					</p>
+					<h2 id="contact-heading" class="text-2xl font-semibold tracking-tight text-[color:var(--color-text)]">
+						Contact content placeholder
+					</h2>
+					<p class="max-w-2xl text-sm leading-7 text-[color:var(--color-muted-text)] sm:text-base">
+						This placeholder keeps the Contact anchor usable without pulling Task 7 design work into Task 3.
+					</p>
+				</div>
+			</section>
 		</div>
 	</main>
 </Layout>

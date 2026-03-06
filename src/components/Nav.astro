@@ -37,7 +37,8 @@
 				type="button"
 				data-theme-toggle
 				class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-background)] text-[color:var(--color-text)] transition hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)]"
-				aria-label="Toggle color theme"
+				aria-label="Switch to light theme"
+				aria-pressed="false"
 			>
 				<svg
 					data-theme-sun
@@ -87,6 +88,8 @@
 		const isLight = document.body.classList.contains('light');
 		sun?.classList.toggle('hidden', isLight);
 		moon?.classList.toggle('hidden', !isLight);
+		toggle?.setAttribute('aria-pressed', String(isLight));
+		toggle?.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
 	};
 
 	updateIcons();
