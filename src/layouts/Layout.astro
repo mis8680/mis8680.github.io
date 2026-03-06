@@ -34,5 +34,11 @@ const description = 'Insu Mun portfolio site featuring product design, engineeri
 			} catch {}
 		</script>
 		<slot />
+		<script>
+			import { initScrollAnimations } from '../scripts/animations';
+
+			initScrollAnimations();
+			document.addEventListener('astro:page-load', initScrollAnimations);
+		</script>
 	</body>
 </html>
