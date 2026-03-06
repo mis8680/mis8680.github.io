@@ -1,11 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
 ---
 
 <Layout title="Insu Mun | Portfolio">
-	<main class="mx-auto flex min-h-screen max-w-4xl items-center justify-center px-6">
-		<p class="text-center text-sm font-semibold uppercase tracking-[0.28em] text-[color:var(--color-accent)] sm:text-base">
-			The site is coming together.
-		</p>
+	<Nav />
+	<main class="mx-auto flex min-h-screen max-w-4xl px-6 pt-28">
+		<div class="flex w-full flex-col gap-24 pb-16">
+			<section id="projects" class="flex min-h-[calc(100vh-8rem)] items-center justify-center scroll-mt-28">
+				<p class="text-center text-sm font-semibold uppercase tracking-[0.28em] text-[color:var(--color-accent)] sm:text-base">
+					The site is coming together.
+				</p>
+			</section>
+			<section id="about" class="h-px scroll-mt-28" aria-hidden="true"></section>
+			<section id="contact" class="h-px scroll-mt-28" aria-hidden="true"></section>
+		</div>
 	</main>
 </Layout>
