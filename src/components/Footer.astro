@@ -1,0 +1,20 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="mx-auto w-full max-w-6xl px-6 pb-10">
+	<div class="flex flex-col gap-3 rounded-[1.5rem] border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-surface)_76%,transparent)] px-5 py-4 shadow-[0_18px_60px_rgba(7,20,25,0.14)] sm:flex-row sm:items-center sm:justify-between">
+		<p class="text-sm font-medium text-[color:var(--color-text)]">© {currentYear} Insu Mun</p>
+		<p class="text-sm text-[color:var(--color-muted-text)]">
+			Built with
+			<a
+				href="https://astro.build"
+				target="_blank"
+				rel="noreferrer"
+				class="font-medium text-[color:var(--color-text)] transition hover:text-[color:var(--color-accent)]"
+			>
+				Astro
+			</a>.
+		</p>
+	</div>
+</footer>

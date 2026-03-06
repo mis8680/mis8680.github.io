@@ -4,32 +4,19 @@ import Hero from '../components/Hero.astro';
 import Nav from '../components/Nav.astro';
 import Projects from '../components/Projects.astro';
 import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Insu Mun | Portfolio">
 	<Nav />
 	<main class="mx-auto flex min-h-screen max-w-6xl px-6 pt-28">
-		<div class="flex w-full flex-col gap-8 pb-16">
+		<div class="flex w-full flex-col gap-8 pb-8">
 			<Hero />
 			<Projects />
 			<About />
-			<section
-				id="contact"
-				class="rounded-[2rem] border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-surface)_40%,transparent)] px-6 py-8 scroll-mt-28"
-				aria-labelledby="contact-heading"
-			>
-				<div class="space-y-3">
-					<p class="text-xs font-semibold uppercase tracking-[0.32em] text-[color:var(--color-accent)]">
-						Contact
-					</p>
-					<h2 id="contact-heading" class="text-2xl font-semibold tracking-tight text-[color:var(--color-text)]">
-						Contact content placeholder
-					</h2>
-					<p class="max-w-2xl text-sm leading-7 text-[color:var(--color-muted-text)] sm:text-base">
-						This placeholder keeps the Contact anchor usable without pulling Task 7 design work into Task 3.
-					</p>
-				</div>
-			</section>
+			<Contact />
 		</div>
 	</main>
+	<Footer />
 </Layout>
