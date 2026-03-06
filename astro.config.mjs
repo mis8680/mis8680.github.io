@@ -11,9 +11,6 @@ export default defineConfig({
     assets: '_assets'
   },
   vite: {
-    build: {
-      emptyOutDir: false
-    },
     plugins: [tailwindcss()]
   }
 });
