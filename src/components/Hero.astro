@@ -143,29 +143,31 @@ const socialLinks = [
 </section>
 
 <script is:inline>
-	const hero = document.querySelector('[data-hero]');
+	const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	const supportsPointer = window.matchMedia('(pointer: fine)').matches;
 
-	if (hero instanceof HTMLElement && hero.dataset.glowBound !== 'true') {
-		hero.dataset.glowBound = 'true';
+	document.querySelectorAll('[data-hero]').forEach((heroElement) => {
+		if (!(heroElement instanceof HTMLElement) || heroElement.dataset.glowBound === 'true') {
+			return;
+		}
 
-		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-		const supportsPointer = window.matchMedia('(pointer: fine)').matches;
+		heroElement.dataset.glowBound = 'true';
 
 		const resetGlow = () => {
-			hero.style.setProperty('--glow-x', '50%');
-			hero.style.setProperty('--glow-y', '36%');
-			hero.style.setProperty('--glow-opacity', '0.78');
+			heroElement.style.setProperty('--glow-x', '50%');
+			heroElement.style.setProperty('--glow-y', '36%');
+			heroElement.style.setProperty('--glow-opacity', '0.78');
 		};
 
 		if (!prefersReducedMotion && supportsPointer) {
-			hero.addEventListener('pointermove', (event) => {
-				const rect = hero.getBoundingClientRect();
-				hero.style.setProperty('--glow-x', `${event.clientX - rect.left}px`);
-				hero.style.setProperty('--glow-y', `${event.clientY - rect.top}px`);
-				hero.style.setProperty('--glow-opacity', '1');
+			heroElement.addEventListener('pointermove', (event) => {
+				const rect = heroElement.getBoundingClientRect();
+				heroElement.style.setProperty('--glow-x', `${event.clientX - rect.left}px`);
+				heroElement.style.setProperty('--glow-y', `${event.clientY - rect.top}px`);
+				heroElement.style.setProperty('--glow-opacity', '1');
 			});
 
-			hero.addEventListener('pointerleave', resetGlow);
+			heroElement.addEventListener('pointerleave', resetGlow);
 		}
-	}
+	});
 </script>
