@@ -1,0 +1,104 @@
+---
+import ProjectCard from './ProjectCard.astro';
+
+const featuredProject = {
+	title: 'Portfolio Redesign',
+	description:
+		'Reframing this site as a sharper product story with a more editorial layout, clearer hierarchy, and interaction details that feel considered instead of ornamental.',
+	tags: ['Astro', 'UI Systems', 'Responsive'],
+	href: 'https://github.com/mis8680/mis8680.github.io',
+};
+
+const supportingProjects = [
+	{
+		title: 'Campus Event Toolkit',
+		description: 'A planning workflow concept that helps student teams coordinate venues, timing, and logistics without losing the bigger picture.',
+		tags: ['Product UX', 'Operations', 'Prototype'],
+		href: '#contact',
+		layoutClass: 'xl:col-span-5',
+	},
+	{
+		title: 'Creator Metrics Snapshot',
+		description: 'An analytics direction focused on translating noisy performance signals into a calmer story for decisions and iteration.',
+		tags: ['Data Viz', 'Motion', 'Front-End'],
+		href: '#contact',
+		layoutClass: 'xl:col-span-3',
+	},
+	{
+		title: 'Component Lab',
+		description: 'A sandbox for testing tone, theme shifts, and interaction polish before patterns graduate into a full interface system.',
+		tags: ['Design System', 'Tailwind', 'A11y'],
+		href: '#about',
+		layoutClass: 'xl:col-span-2',
+	},
+	{
+		title: 'Research Threads',
+		description: 'A lightweight synthesis format for turning interviews, friction points, and open questions into something teams can act on.',
+		tags: ['Research', 'Strategy', 'Systems'],
+		href: '#about',
+		layoutClass: 'md:col-span-2 xl:col-span-5',
+	},
+];
+---
+
+<section
+	id="projects"
+	class="relative isolate overflow-hidden rounded-[2.5rem] border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-surface)_78%,transparent)] px-6 py-8 shadow-[0_28px_90px_rgba(4,19,24,0.22)] scroll-mt-28 sm:px-8 sm:py-10 lg:px-10 lg:py-12"
+	aria-labelledby="projects-heading"
+>
+	<div aria-hidden="true" class="absolute inset-0">
+		<div class="absolute inset-0 bg-[linear-gradient(135deg,color-mix(in_srgb,var(--color-surface)_94%,transparent),color-mix(in_srgb,var(--color-background)_90%,transparent))]"></div>
+		<div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_18%,rgba(94,234,212,0.1),transparent_24%),radial-gradient(circle_at_88%_12%,rgba(45,212,191,0.08),transparent_20%)]"></div>
+		<div class="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(94,234,212,0.48),transparent)]"></div>
+		<div class="absolute inset-y-10 left-[58%] hidden w-px bg-[linear-gradient(180deg,transparent,rgba(148,163,184,0.14),transparent)] xl:block"></div>
+	</div>
+
+	<div class="relative z-10 flex flex-col gap-8">
+		<div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+			<div class="max-w-3xl space-y-4">
+				<p class="text-xs font-semibold uppercase tracking-[0.32em] text-[color:var(--color-accent)]">
+					Selected Projects
+				</p>
+				<h2 id="projects-heading" class="max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
+					Work that moves from structure to shipped experience.
+				</h2>
+				<p class="max-w-2xl text-sm leading-7 text-[color:var(--color-muted-text)] sm:text-base">
+					A snapshot of the kinds of product, systems, and front-end problems I like working through. The archive is still growing, but the direction is here.
+				</p>
+			</div>
+
+			<div class="grid gap-3 sm:grid-cols-2">
+				<div class="rounded-[1.4rem] border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-background)_18%,transparent)] px-4 py-3">
+					<p class="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-[color:var(--color-accent)]">
+						Focus
+					</p>
+					<p class="mt-2 text-sm leading-6 text-[color:var(--color-text)]">
+						Product clarity, motion restraint, and systems that stay legible as scope grows.
+					</p>
+				</div>
+				<div class="rounded-[1.4rem] border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-background)_18%,transparent)] px-4 py-3">
+					<p class="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-[color:var(--color-accent)]">
+						Approach
+					</p>
+					<p class="mt-2 text-sm leading-6 text-[color:var(--color-text)]">
+						Make the big move obvious, then refine the small details until the whole page feels intentional.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-12">
+			<div class="xl:col-span-7 xl:row-span-2">
+				<ProjectCard featured={true} {...featuredProject} />
+			</div>
+
+			{
+				supportingProjects.map(({ layoutClass, ...project }) => (
+					<div class={layoutClass}>
+						<ProjectCard {...project} />
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
