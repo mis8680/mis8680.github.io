@@ -7,6 +7,11 @@
 	--color-border: rgba(148, 163, 184, 0.2);
 	--color-text: #e6f5f6;
 	--color-muted-text: #8ba5a8;
+	--color-background-light: #f4fbfb;
+	--color-surface-light: #ffffff;
+	--color-border-light: rgba(15, 23, 42, 0.12);
+	--color-text-light: #0f172a;
+	--color-muted-light: #475569;
 	--color-accent: #2dd4bf;
 	--color-accent-hover: #5eead4;
 }
@@ -18,18 +23,21 @@ html {
 body {
 	min-height: 100vh;
 	margin: 0;
-	background: var(--color-background);
+	background-color: var(--color-background);
 	color: var(--color-text);
 	font-family: var(--font-sans);
 	color-scheme: dark;
+	transition:
+		background-color 200ms ease,
+		color 200ms ease;
 }
 
 body.light {
-	--color-background: #f4fbfb;
-	--color-surface: #ffffff;
-	--color-border: rgba(15, 23, 42, 0.12);
-	--color-text: #0f172a;
-	--color-muted-text: #475569;
+	--color-background: var(--color-background-light);
+	--color-surface: var(--color-surface-light);
+	--color-border: var(--color-border-light);
+	--color-text: var(--color-text-light);
+	--color-muted-text: var(--color-muted-light);
 	--color-accent: #0f766e;
 	--color-accent-hover: #115e59;
 	color-scheme: light;
