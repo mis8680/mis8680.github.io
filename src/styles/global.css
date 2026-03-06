@@ -7,13 +7,78 @@
 	--color-border: rgba(148, 163, 184, 0.2);
 	--color-text: #e6f5f6;
 	--color-muted-text: #8ba5a8;
-	--color-background-light: #f4fbfb;
+	--color-background-light: #edf7f7;
 	--color-surface-light: #ffffff;
-	--color-border-light: rgba(15, 23, 42, 0.12);
+	--color-border-light: rgba(15, 23, 42, 0.14);
 	--color-text-light: #0f172a;
-	--color-muted-light: #475569;
+	--color-muted-light: #526072;
 	--color-accent: #2dd4bf;
 	--color-accent-hover: #5eead4;
+	--surface-nav: color-mix(in srgb, var(--color-surface) 82%, transparent);
+	--surface-nav-inner: color-mix(in srgb, var(--color-background) 72%, transparent);
+	--surface-hero: color-mix(in srgb, var(--color-surface) 90%, transparent);
+	--surface-section: color-mix(in srgb, var(--color-surface) 78%, transparent);
+	--surface-card: color-mix(in srgb, var(--color-surface) 76%, transparent);
+	--surface-elevated: color-mix(in srgb, var(--color-background) 28%, transparent);
+	--surface-soft: color-mix(in srgb, var(--color-background) 24%, transparent);
+	--surface-subtle: color-mix(in srgb, var(--color-background) 18%, transparent);
+	--surface-tag: color-mix(in srgb, var(--color-background) 20%, transparent);
+	--border-accent-soft: color-mix(in srgb, var(--color-accent) 30%, var(--color-border));
+	--border-accent-panel: color-mix(in srgb, var(--color-accent) 22%, var(--color-border));
+	--border-accent-hover: color-mix(in srgb, var(--color-accent) 55%, var(--color-border));
+	--gradient-hero: linear-gradient(
+		135deg,
+		color-mix(in srgb, var(--color-surface) 96%, transparent),
+		color-mix(in srgb, var(--color-background) 88%, transparent)
+	);
+	--gradient-section: linear-gradient(
+		135deg,
+		color-mix(in srgb, var(--color-surface) 94%, transparent),
+		color-mix(in srgb, var(--color-background) 89%, transparent)
+	);
+	--gradient-card-featured: linear-gradient(
+		140deg,
+		color-mix(in srgb, var(--color-surface) 96%, transparent),
+		color-mix(in srgb, var(--color-background) 84%, transparent)
+	);
+	--gradient-card: linear-gradient(
+		145deg,
+		color-mix(in srgb, var(--color-surface) 88%, transparent),
+		color-mix(in srgb, var(--color-background) 80%, transparent)
+	);
+	--gradient-card-hover: linear-gradient(
+		145deg,
+		color-mix(in srgb, var(--color-surface) 94%, transparent),
+		color-mix(in srgb, var(--color-background) 76%, transparent)
+	);
+	--gradient-orb: radial-gradient(circle at 30% 28%, rgba(94, 234, 212, 0.18), transparent 30%),
+		linear-gradient(
+			180deg,
+			color-mix(in srgb, var(--color-background) 22%, transparent),
+			color-mix(in srgb, var(--color-surface) 84%, transparent)
+		);
+	--accent-wash-strong: rgba(94, 234, 212, 0.16);
+	--accent-wash-soft: rgba(45, 212, 191, 0.1);
+	--accent-glow-strong: rgba(45, 212, 191, 0.26);
+	--accent-glow-soft: rgba(94, 234, 212, 0.12);
+	--accent-dot-shadow: rgba(45, 212, 191, 0.8);
+	--divider-accent: rgba(94, 234, 212, 0.42);
+	--line-soft: rgba(148, 163, 184, 0.18);
+	--overlay-tone: rgba(7, 20, 25, 0.1);
+	--overlay-tone-strong: rgba(7, 20, 25, 0.14);
+	--ornament-ring: rgba(255, 255, 255, 0.08);
+	--shadow-strong: rgba(4, 19, 24, 0.28);
+	--shadow-panel: rgba(4, 19, 24, 0.22);
+	--shadow-card: rgba(4, 19, 24, 0.24);
+	--shadow-soft: rgba(7, 20, 25, 0.18);
+	--shadow-subtle: rgba(7, 20, 25, 0.14);
+	--shadow-nav: 0 18px 60px var(--shadow-soft);
+	--shadow-hero: 0 32px 100px var(--shadow-strong);
+	--shadow-section: 0 28px 90px var(--shadow-panel);
+	--shadow-card-hover: 0 28px 70px var(--shadow-card);
+	--shadow-orb: 0 24px 80px var(--shadow-card);
+	--shadow-float: 0 18px 50px var(--shadow-soft);
+	--page-background: radial-gradient(circle at top, rgba(45, 212, 191, 0.08), transparent 30%);
 }
 
 html {
@@ -24,6 +89,7 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	background-color: var(--color-background);
+	background-image: var(--page-background);
 	color: var(--color-text);
 	font-family: var(--font-sans);
 	color-scheme: dark;
@@ -40,6 +106,65 @@ body.light {
 	--color-muted-text: var(--color-muted-light);
 	--color-accent: #0f766e;
 	--color-accent-hover: #115e59;
+	--surface-nav: color-mix(in srgb, var(--color-surface) 92%, var(--color-background));
+	--surface-nav-inner: color-mix(in srgb, var(--color-surface) 84%, var(--color-background));
+	--surface-hero: color-mix(in srgb, var(--color-surface) 96%, var(--color-background));
+	--surface-section: color-mix(in srgb, var(--color-surface) 92%, var(--color-background));
+	--surface-card: color-mix(in srgb, var(--color-surface) 88%, var(--color-background));
+	--surface-elevated: color-mix(in srgb, var(--color-surface) 84%, var(--color-background));
+	--surface-soft: color-mix(in srgb, var(--color-surface) 80%, var(--color-background));
+	--surface-subtle: color-mix(in srgb, var(--color-surface) 76%, var(--color-background));
+	--surface-tag: color-mix(in srgb, var(--color-surface) 82%, var(--color-background));
+	--border-accent-soft: color-mix(in srgb, var(--color-accent) 24%, var(--color-border));
+	--border-accent-panel: color-mix(in srgb, var(--color-accent) 18%, var(--color-border));
+	--border-accent-hover: color-mix(in srgb, var(--color-accent) 42%, var(--color-border));
+	--gradient-hero: linear-gradient(
+		135deg,
+		rgba(255, 255, 255, 0.98),
+		color-mix(in srgb, var(--color-accent) 8%, var(--color-background))
+	);
+	--gradient-section: linear-gradient(
+		135deg,
+		rgba(255, 255, 255, 0.97),
+		color-mix(in srgb, var(--color-accent) 6%, var(--color-background))
+	);
+	--gradient-card-featured: linear-gradient(
+		140deg,
+		rgba(255, 255, 255, 0.98),
+		color-mix(in srgb, var(--color-accent) 7%, var(--color-background))
+	);
+	--gradient-card: linear-gradient(
+		145deg,
+		rgba(255, 255, 255, 0.96),
+		color-mix(in srgb, var(--color-accent) 5%, var(--color-background))
+	);
+	--gradient-card-hover: linear-gradient(
+		145deg,
+		rgba(255, 255, 255, 0.99),
+		color-mix(in srgb, var(--color-accent) 9%, var(--color-background))
+	);
+	--gradient-orb: radial-gradient(circle at 30% 28%, rgba(15, 118, 110, 0.14), transparent 30%),
+		linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.94),
+			color-mix(in srgb, var(--color-accent) 6%, var(--color-background))
+		);
+	--accent-wash-strong: rgba(15, 118, 110, 0.12);
+	--accent-wash-soft: rgba(45, 212, 191, 0.07);
+	--accent-glow-strong: rgba(15, 118, 110, 0.16);
+	--accent-glow-soft: rgba(45, 212, 191, 0.08);
+	--accent-dot-shadow: rgba(15, 118, 110, 0.28);
+	--divider-accent: rgba(15, 118, 110, 0.22);
+	--line-soft: rgba(148, 163, 184, 0.26);
+	--overlay-tone: rgba(148, 163, 184, 0.08);
+	--overlay-tone-strong: rgba(148, 163, 184, 0.12);
+	--ornament-ring: rgba(15, 23, 42, 0.08);
+	--shadow-strong: rgba(15, 23, 42, 0.1);
+	--shadow-panel: rgba(15, 23, 42, 0.07);
+	--shadow-card: rgba(15, 23, 42, 0.08);
+	--shadow-soft: rgba(15, 23, 42, 0.05);
+	--shadow-subtle: rgba(15, 23, 42, 0.04);
+	--page-background: radial-gradient(circle at top, rgba(15, 118, 110, 0.08), transparent 34%);
 	color-scheme: light;
 }
 
