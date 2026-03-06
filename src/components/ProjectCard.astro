@@ -14,8 +14,8 @@ const { title, description, tags, href, featured = false } = Astro.props;
 	href={href}
 	aria-label={`View project: ${title}`}
 	class:list={[
-		'group relative flex h-full overflow-hidden rounded-[1.75rem] border border-[color:var(--color-border)] bg-[color:var(--surface-card)] text-left transition duration-300 ease-out hover:-translate-y-1 hover:border-[color:var(--border-accent-hover)] hover:[box-shadow:var(--shadow-card-hover)]',
-		featured ? 'min-h-[28rem] p-8 sm:min-h-[31rem] sm:p-10' : 'min-h-[15rem] p-6',
+		'group relative flex h-full overflow-hidden rounded-[1.75rem] border border-[color:var(--color-border)] bg-[color:var(--surface-card)] text-left transition duration-300 ease-out hover:-translate-y-1 hover:border-[color:var(--border-accent-hover)] hover:[box-shadow:var(--shadow-card-hover)] focus-visible:-translate-y-1 focus-visible:border-[color:var(--border-accent-hover)]',
+		featured ? 'min-h-[26rem] p-6 sm:min-h-[31rem] sm:p-10' : 'min-h-[14rem] p-5 sm:min-h-[15rem] sm:p-6',
 	]}
 >
 	<div
@@ -35,8 +35,8 @@ const { title, description, tags, href, featured = false } = Astro.props;
 		]}
 	></div>
 
-	<div class="relative z-10 flex h-full flex-col justify-between gap-8">
-		<div class="space-y-5">
+	<div class="relative z-10 flex h-full flex-col justify-between gap-6 sm:gap-8">
+		<div class="space-y-4 sm:space-y-5">
 			<div class="flex items-start justify-between gap-4">
 				<span
 					class:list={[
@@ -96,7 +96,7 @@ const { title, description, tags, href, featured = false } = Astro.props;
 			</div>
 		</div>
 
-		<div class="space-y-5">
+		<div class="space-y-4 sm:space-y-5">
 			<ul class="flex flex-wrap gap-2" aria-label="Project tags">
 				{
 					tags.map((tag) => (
@@ -107,7 +107,7 @@ const { title, description, tags, href, featured = false } = Astro.props;
 				}
 			</ul>
 
-			<div class="flex items-center justify-between gap-4 border-t border-[color:var(--color-border)] pt-4">
+			<div class="flex items-center justify-between gap-4 border-t border-[color:var(--color-border)] pt-3 sm:pt-4">
 				<p class="text-sm font-medium text-[color:var(--color-text)]">
 					{featured ? 'See the redesign direction' : 'Explore the project angle'}
 				</p>

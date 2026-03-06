@@ -25,8 +25,8 @@ const contactActions = contactActionOrder.map((linkKey) => ({
 		<div class="absolute inset-y-10 right-[34%] hidden w-px lg:block" style="background-image: linear-gradient(180deg, transparent, var(--line-soft), transparent);"></div>
 	</div>
 
-	<div class="relative z-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(19rem,0.82fr)] lg:items-end">
-		<div class="space-y-5">
+	<div class="relative z-10 grid gap-6 sm:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(19rem,0.82fr)] lg:items-end">
+		<div class="space-y-4 sm:space-y-5">
 			<p class="text-xs font-semibold uppercase tracking-[0.32em] text-[color:var(--color-accent)]">
 				Contact
 			</p>
@@ -46,7 +46,7 @@ const contactActions = contactActionOrder.map((linkKey) => ({
 			</p>
 		</div>
 
-		<div class="rounded-[2rem] border border-[color:var(--border-accent-panel)] bg-[color:var(--surface-elevated)] p-5 backdrop-blur-sm sm:p-6">
+		<div class="rounded-[2rem] border border-[color:var(--border-accent-panel)] bg-[color:var(--surface-elevated)] p-4 backdrop-blur-sm sm:p-6">
 			<div class="space-y-4">
 				<p class="text-xs font-semibold uppercase tracking-[0.32em] text-[color:var(--color-accent)]">
 					Reach out
@@ -60,7 +60,7 @@ const contactActions = contactActionOrder.map((linkKey) => ({
 								target={external ? '_blank' : undefined}
 								rel={external ? 'noreferrer' : undefined}
 								class:list={[
-									'group flex min-h-28 flex-col justify-between rounded-[1.5rem] border px-4 py-4 text-left transition duration-300 ease-out hover:-translate-y-0.5',
+									'group flex min-h-24 flex-col justify-between rounded-[1.5rem] border px-4 py-3 text-left transition duration-300 ease-out hover:-translate-y-0.5 sm:min-h-28 sm:py-4',
 									featured
 										? 'border-[color:var(--color-accent)] bg-[color:var(--color-accent)] text-[color:var(--color-background)] hover:border-[color:var(--color-accent-hover)] hover:bg-[color:var(--color-accent-hover)]'
 										: 'border-[color:var(--color-border)] bg-[color:var(--surface-card)] text-[color:var(--color-text)] hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)]',
@@ -82,7 +82,7 @@ const contactActions = contactActionOrder.map((linkKey) => ({
 
 								<p
 									class:list={[
-										'mt-4 text-sm leading-6',
+										'mt-3 text-sm leading-6 sm:mt-4',
 										featured
 											? 'text-[color:var(--color-background)]'
 											: 'text-[color:var(--color-muted-text)] group-hover:text-[color:var(--color-text)]',
