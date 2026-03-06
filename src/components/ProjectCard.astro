@@ -14,7 +14,7 @@ const { title, description, tags, href, featured = false } = Astro.props;
 	href={href}
 	aria-label={`View project: ${title}`}
 	class:list={[
-		'group relative flex h-full overflow-hidden rounded-[1.75rem] border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-surface)_76%,transparent)] text-left transition duration-300 ease-out hover:-translate-y-1 hover:border-[color:color-mix(in_srgb,var(--color-accent)_55%,var(--color-border))] hover:shadow-[0_28px_70px_rgba(4,19,24,0.24)]',
+		'group relative flex h-full overflow-hidden rounded-[1.75rem] border border-[color:var(--color-border)] bg-[color:var(--surface-card)] text-left transition duration-300 ease-out hover:-translate-y-1 hover:border-[color:var(--border-accent-hover)] hover:[box-shadow:var(--shadow-card-hover)]',
 		featured ? 'min-h-[28rem] p-8 sm:min-h-[31rem] sm:p-10' : 'min-h-[15rem] p-6',
 	]}
 >
@@ -22,9 +22,7 @@ const { title, description, tags, href, featured = false } = Astro.props;
 		aria-hidden="true"
 		class:list={[
 			'absolute inset-0 transition duration-300 ease-out',
-			featured
-				? 'bg-[linear-gradient(140deg,color-mix(in_srgb,var(--color-surface)_96%,transparent),color-mix(in_srgb,var(--color-background)_84%,transparent))]'
-				: 'bg-[linear-gradient(145deg,color-mix(in_srgb,var(--color-surface)_88%,transparent),color-mix(in_srgb,var(--color-background)_80%,transparent))] group-hover:bg-[linear-gradient(145deg,color-mix(in_srgb,var(--color-surface)_94%,transparent),color-mix(in_srgb,var(--color-background)_76%,transparent))]',
+			featured ? 'bg-[image:var(--gradient-card-featured)]' : 'bg-[image:var(--gradient-card)] group-hover:bg-[image:var(--gradient-card-hover)]',
 		]}
 	></div>
 	<div
@@ -32,8 +30,8 @@ const { title, description, tags, href, featured = false } = Astro.props;
 		class:list={[
 			'absolute inset-0 transition duration-300 ease-out',
 			featured
-				? 'bg-[radial-gradient(circle_at_20%_18%,rgba(94,234,212,0.2),transparent_30%),radial-gradient(circle_at_82%_18%,rgba(45,212,191,0.14),transparent_25%),linear-gradient(180deg,transparent,rgba(7,20,25,0.14))]'
-				: 'bg-[radial-gradient(circle_at_80%_12%,rgba(45,212,191,0.12),transparent_26%),linear-gradient(180deg,transparent,rgba(7,20,25,0.1))] group-hover:bg-[radial-gradient(circle_at_78%_10%,rgba(45,212,191,0.2),transparent_30%),linear-gradient(180deg,transparent,rgba(7,20,25,0.08))]',
+				? 'bg-[image:radial-gradient(circle_at_20%_18%,var(--accent-wash-strong),transparent_30%),radial-gradient(circle_at_82%_18%,var(--accent-wash-soft),transparent_25%),linear-gradient(180deg,transparent,var(--overlay-tone-strong))]'
+				: 'bg-[image:radial-gradient(circle_at_80%_12%,var(--accent-wash-soft),transparent_26%),linear-gradient(180deg,transparent,var(--overlay-tone))] group-hover:bg-[image:radial-gradient(circle_at_78%_10%,var(--accent-wash-strong),transparent_30%),linear-gradient(180deg,transparent,var(--overlay-tone))]',
 		]}
 	></div>
 
@@ -44,15 +42,15 @@ const { title, description, tags, href, featured = false } = Astro.props;
 					class:list={[
 						'inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.28em]',
 						featured
-							? 'border-[color:color-mix(in_srgb,var(--color-accent)_28%,var(--color-border))] bg-[color:color-mix(in_srgb,var(--color-background)_18%,transparent)] text-[color:var(--color-accent)]'
-							: 'border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-background)_18%,transparent)] text-[color:var(--color-muted-text)] group-hover:text-[color:var(--color-accent)]',
+							? 'border-[color:var(--border-accent-soft)] bg-[color:var(--surface-subtle)] text-[color:var(--color-accent)]'
+							: 'border-[color:var(--color-border)] bg-[color:var(--surface-subtle)] text-[color:var(--color-muted-text)] group-hover:text-[color:var(--color-accent)]',
 					]}
 				>
 					<span
 						class:list={[
 							'h-2 w-2 rounded-full transition duration-300',
 							featured
-								? 'bg-[color:var(--color-accent)] shadow-[0_0_18px_rgba(45,212,191,0.65)]'
+								? 'bg-[color:var(--color-accent)] shadow-[0_0_18px_var(--accent-dot-shadow)]'
 								: 'bg-[color:color-mix(in_srgb,var(--color-muted-text)_70%,transparent)] group-hover:bg-[color:var(--color-accent)]',
 						]}
 					></span>
@@ -60,7 +58,7 @@ const { title, description, tags, href, featured = false } = Astro.props;
 				</span>
 
 				<span
-					class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-background)_24%,transparent)] text-[color:var(--color-text)] transition duration-300 group-hover:border-[color:var(--color-accent)] group-hover:text-[color:var(--color-accent)]"
+					class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--color-border)] bg-[color:var(--surface-soft)] text-[color:var(--color-text)] transition duration-300 group-hover:border-[color:var(--color-accent)] group-hover:text-[color:var(--color-accent)]"
 				>
 					<svg
 						class="h-5 w-5 transition duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
@@ -102,7 +100,7 @@ const { title, description, tags, href, featured = false } = Astro.props;
 			<ul class="flex flex-wrap gap-2" aria-label="Project tags">
 				{
 					tags.map((tag) => (
-						<li class="rounded-full border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-background)_20%,transparent)] px-3 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text)]">
+						<li class="rounded-full border border-[color:var(--color-border)] bg-[color:var(--surface-tag)] px-3 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text)]">
 							{tag}
 						</li>
 					))

@@ -10,15 +10,19 @@ const contactActions = contactActionOrder.map((linkKey) => ({
 
 <section
 	id="contact"
-	class="relative isolate overflow-hidden rounded-[2.5rem] border border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-surface)_76%,transparent)] px-6 py-8 shadow-[0_28px_90px_rgba(4,19,24,0.2)] scroll-mt-28 sm:px-8 sm:py-10 lg:px-10 lg:py-12"
+	class="relative isolate overflow-hidden rounded-[2.5rem] border border-[color:var(--color-border)] px-6 py-8 scroll-mt-28 sm:px-8 sm:py-10 lg:px-10 lg:py-12"
+	style="background-color: var(--surface-section); box-shadow: var(--shadow-section);"
 	data-animate="fade-up"
 	aria-labelledby="contact-heading"
 >
 	<div aria-hidden="true" class="absolute inset-0">
-		<div class="absolute inset-0 bg-[linear-gradient(135deg,color-mix(in_srgb,var(--color-surface)_94%,transparent),color-mix(in_srgb,var(--color-background)_88%,transparent))]"></div>
-		<div class="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(94,234,212,0.12),transparent_24%),radial-gradient(circle_at_84%_16%,rgba(45,212,191,0.08),transparent_22%)]"></div>
-		<div class="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(94,234,212,0.42),transparent)]"></div>
-		<div class="absolute inset-y-10 right-[34%] hidden w-px bg-[linear-gradient(180deg,transparent,rgba(148,163,184,0.16),transparent)] lg:block"></div>
+		<div class="absolute inset-0" style="background-image: var(--gradient-section);"></div>
+		<div
+			class="absolute inset-0"
+			style="background-image: radial-gradient(circle at 16% 18%, var(--accent-wash-strong), transparent 24%), radial-gradient(circle at 84% 16%, var(--accent-glow-soft), transparent 22%);"
+		></div>
+		<div class="absolute inset-x-0 top-0 h-px" style="background-image: linear-gradient(90deg, transparent, var(--divider-accent), transparent);"></div>
+		<div class="absolute inset-y-10 right-[34%] hidden w-px lg:block" style="background-image: linear-gradient(180deg, transparent, var(--line-soft), transparent);"></div>
 	</div>
 
 	<div class="relative z-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(19rem,0.82fr)] lg:items-end">
@@ -42,7 +46,7 @@ const contactActions = contactActionOrder.map((linkKey) => ({
 			</p>
 		</div>
 
-		<div class="rounded-[2rem] border border-[color:color-mix(in_srgb,var(--color-accent)_22%,var(--color-border))] bg-[color:color-mix(in_srgb,var(--color-background)_24%,transparent)] p-5 backdrop-blur-sm sm:p-6">
+		<div class="rounded-[2rem] border border-[color:var(--border-accent-panel)] bg-[color:var(--surface-elevated)] p-5 backdrop-blur-sm sm:p-6">
 			<div class="space-y-4">
 				<p class="text-xs font-semibold uppercase tracking-[0.32em] text-[color:var(--color-accent)]">
 					Reach out
@@ -59,7 +63,7 @@ const contactActions = contactActionOrder.map((linkKey) => ({
 									'group flex min-h-28 flex-col justify-between rounded-[1.5rem] border px-4 py-4 text-left transition duration-300 ease-out hover:-translate-y-0.5',
 									featured
 										? 'border-[color:var(--color-accent)] bg-[color:var(--color-accent)] text-[color:var(--color-background)] hover:border-[color:var(--color-accent-hover)] hover:bg-[color:var(--color-accent-hover)]'
-										: 'border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-surface)_74%,transparent)] text-[color:var(--color-text)] hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)]',
+										: 'border-[color:var(--color-border)] bg-[color:var(--surface-card)] text-[color:var(--color-text)] hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)]',
 								]}
 							>
 								<div class="flex items-center justify-between gap-3">
@@ -68,8 +72,8 @@ const contactActions = contactActionOrder.map((linkKey) => ({
 										class:list={[
 											'rounded-full border px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.24em]',
 											featured
-												? 'border-[color:rgba(7,20,25,0.18)] bg-[color:rgba(7,20,25,0.08)] text-[color:var(--color-background)]'
-												: 'border-[color:var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-background)_18%,transparent)] text-[color:var(--color-muted-text)] group-hover:text-[color:var(--color-accent)]',
+												? 'border-[color:var(--overlay-tone-strong)] bg-[color:var(--overlay-tone)] text-[color:var(--color-background)]'
+												: 'border-[color:var(--color-border)] bg-[color:var(--surface-subtle)] text-[color:var(--color-muted-text)] group-hover:text-[color:var(--color-accent)]',
 										]}
 									>
 										{external ? 'Open' : 'Send'}
