@@ -1,4 +1,6 @@
 ---
+import { contactLinks, type ContactLinkKey } from '../data/contactLinks';
+
 const focusAreas = [
 	{
 		title: 'Product direction',
@@ -14,23 +16,8 @@ const focusAreas = [
 	},
 ];
 
-const socialLinks = [
-	{
-		href: 'https://github.com/mis8680',
-		label: 'GitHub',
-		external: true,
-	},
-	{
-		href: 'https://www.linkedin.com/in/insu-eric-mun',
-		label: 'LinkedIn',
-		external: true,
-	},
-	{
-		href: 'mailto:mis8680@gmail.com',
-		label: 'Email',
-		external: false,
-	},
-];
+const socialLinkOrder: ContactLinkKey[] = ['github', 'linkedin', 'email'];
+const socialLinks = socialLinkOrder.map((linkKey) => contactLinks[linkKey]);
 ---
 
 <section

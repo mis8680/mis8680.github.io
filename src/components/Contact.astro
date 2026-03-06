@@ -1,27 +1,11 @@
 ---
-const contactActions = [
-	{
-		href: 'mailto:mis8680@gmail.com',
-		label: 'Email',
-		detail: 'mis8680@gmail.com',
-		external: false,
-		featured: true,
-	},
-	{
-		href: 'https://github.com/mis8680',
-		label: 'GitHub',
-		detail: 'github.com/mis8680',
-		external: true,
-		featured: false,
-	},
-	{
-		href: 'https://www.linkedin.com/in/insu-eric-mun',
-		label: 'LinkedIn',
-		detail: 'linkedin.com/in/insu-eric-mun',
-		external: true,
-		featured: false,
-	},
-];
+import { contactLinks, type ContactLinkKey } from '../data/contactLinks';
+
+const contactActionOrder: ContactLinkKey[] = ['email', 'github', 'linkedin'];
+const contactActions = contactActionOrder.map((linkKey) => ({
+	...contactLinks[linkKey],
+	featured: linkKey === 'email',
+}));
 ---
 
 <section
