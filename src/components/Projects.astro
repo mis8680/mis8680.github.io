@@ -2,41 +2,36 @@
 import ProjectCard from './ProjectCard.astro';
 
 const featuredProject = {
-	title: 'Portfolio Redesign',
+	title: 'Portfolio System',
 	description:
-		'Reframing this site as a sharper product story with a more editorial layout, clearer hierarchy, and interaction details that feel considered instead of ornamental.',
-	tags: ['Astro', 'UI Systems', 'Responsive'],
+		'The site you are on: a focused rebuild of my portfolio with cleaner hierarchy, quieter motion, and a structure that can grow into fuller case studies over time.',
+	tags: ['Astro', 'Tailwind CSS', 'GitHub Pages'],
 	href: 'https://github.com/mis8680/mis8680.github.io',
+	eyebrow: 'Live build',
+	summaryLabel: 'See how the site is evolving',
+	ctaLabel: 'View source',
 };
 
 const supportingProjects = [
 	{
-		title: 'Campus Event Toolkit',
-		description: 'A planning workflow concept that helps student teams coordinate venues, timing, and logistics without losing the bigger picture.',
-		tags: ['Product UX', 'Operations', 'Prototype'],
-		href: '#contact',
-		layoutClass: 'xl:col-span-5',
-	},
-	{
-		title: 'Creator Metrics Snapshot',
-		description: 'An analytics direction focused on translating noisy performance signals into a calmer story for decisions and iteration.',
-		tags: ['Data Viz', 'Motion', 'Front-End'],
-		href: '#contact',
-		layoutClass: 'xl:col-span-3',
-	},
-	{
-		title: 'Component Lab',
-		description: 'A sandbox for testing tone, theme shifts, and interaction polish before patterns graduate into a full interface system.',
-		tags: ['Design System', 'Tailwind', 'A11y'],
+		title: 'Product Direction',
+		description:
+			'I like turning broad goals into pages, flows, and interaction decisions that feel clear before they feel clever.',
+		tags: ['Strategy', 'UX', 'Narrative'],
 		href: '#about',
-		layoutClass: 'xl:col-span-2',
+		eyebrow: 'Practice area',
+		summaryLabel: 'How I frame product work',
+		ctaLabel: 'Read more',
 	},
 	{
-		title: 'Research Threads',
-		description: 'A lightweight synthesis format for turning interviews, friction points, and open questions into something teams can act on.',
-		tags: ['Research', 'Strategy', 'Systems'],
-		href: '#about',
-		layoutClass: 'md:col-span-2 xl:col-span-5',
+		title: 'Interface Systems',
+		description:
+			'Component rules, layout rhythm, and front-end details that keep a product coherent as new content and states get added.',
+		tags: ['Design System', 'Front-End', 'Accessibility'],
+		href: '#contact',
+		eyebrow: 'Practice area',
+		summaryLabel: 'How I build interface systems',
+		ctaLabel: 'Learn more',
 	},
 ];
 ---
@@ -65,10 +60,10 @@ const supportingProjects = [
 					Selected Projects
 				</p>
 				<h2 id="projects-heading" class="max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
-					Work that moves from structure to shipped experience.
+					A tighter snapshot of the work and thinking I keep building on.
 				</h2>
 				<p class="max-w-2xl text-sm leading-7 text-[color:var(--color-muted-text)] sm:text-base">
-					A snapshot of the kinds of product, systems, and front-end problems I like working through. The archive is still growing, but the direction is here.
+					One live build and two recurring practice areas that reflect how I approach product and front-end work while fuller case studies are still being documented.
 				</p>
 			</div>
 
@@ -92,18 +87,18 @@ const supportingProjects = [
 			</div>
 		</div>
 
-		<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-12">
-			<div class="xl:col-span-7 xl:row-span-2">
+		<div class="grid gap-4 xl:grid-cols-[minmax(0,1.18fr)_minmax(22rem,0.82fr)] xl:items-stretch">
+			<div>
 				<ProjectCard featured={true} {...featuredProject} />
 			</div>
 
-			{
-				supportingProjects.map(({ layoutClass, ...project }) => (
-					<div class={layoutClass}>
+			<div class="grid gap-4 sm:grid-cols-2 xl:auto-rows-fr xl:grid-cols-1">
+				{
+					supportingProjects.map((project) => (
 						<ProjectCard {...project} />
-					</div>
-				))
-			}
+					))
+				}
+			</div>
 		</div>
 	</div>
 </section>
