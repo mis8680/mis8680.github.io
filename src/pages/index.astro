@@ -6,9 +6,50 @@ import Projects from '../components/Projects.astro';
 import About from '../components/About.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
+import { person, siteDescription, siteTitle, siteImagePath, siteName } from '../data/site';
+
+const baseUrl = Astro.site ? new URL('/', Astro.site).toString() : 'https://mis8680.github.io/';
+const imageUrl = new URL(siteImagePath, baseUrl).toString();
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'WebSite',
+			'@id': `${baseUrl}#website`,
+			url: baseUrl,
+			name: `${siteName} Portfolio`,
+			description: siteDescription,
+		},
+		{
+			'@type': 'Person',
+			'@id': `${baseUrl}#person`,
+			name: person.name,
+			url: baseUrl,
+			jobTitle: person.jobTitle,
+			description: siteDescription,
+			email: `mailto:${person.email}`,
+			image: imageUrl,
+			sameAs: [...person.sameAs],
+		},
+		{
+			'@type': 'WebPage',
+			'@id': `${baseUrl}#webpage`,
+			url: baseUrl,
+			name: siteTitle,
+			description: siteDescription,
+			isPartOf: { '@id': `${baseUrl}#website` },
+			about: { '@id': `${baseUrl}#person` },
+			primaryImageOfPage: imageUrl,
+		},
+	],
+};
 ---
 
-<Layout title="Insu Mun | Portfolio">
+<Layout title={siteTitle} description={siteDescription}>
+	<Fragment slot="head">
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+	</Fragment>
 	<Nav />
 	<main class="mx-auto flex min-h-screen max-w-6xl px-6 pt-28">
 		<div class="flex w-full flex-col gap-8 pb-8">

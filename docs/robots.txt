@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mis8680.github.io/sitemap.xml

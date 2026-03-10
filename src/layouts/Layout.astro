@@ -1,12 +1,21 @@
 ---
 import '../styles/global.css';
+import {
+	siteDescription,
+	siteImageAlt,
+	siteImagePath,
+	siteLocale,
+	siteName,
+} from '../data/site';
 
 interface Props {
 	title: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
-const description = 'Insu Mun portfolio site featuring product design, engineering, and creative work.';
+const { title, description = siteDescription } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
+const socialImageUrl = new URL(siteImagePath, Astro.site ?? canonicalUrl);
 ---
 
 <!doctype html>
@@ -15,7 +24,25 @@ const description = 'Insu Mun portfolio site featuring product design, engineeri
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
+		<meta name="author" content={siteName} />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#07131E" />
+		<link rel="canonical" href={canonicalUrl} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta property="og:locale" content={siteLocale} />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={siteName} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={socialImageUrl} />
+		<meta property="og:image:alt" content={siteImageAlt} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={socialImageUrl} />
+		<meta name="twitter:image:alt" content={siteImageAlt} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 		<link
@@ -23,6 +50,7 @@ const description = 'Insu Mun portfolio site featuring product design, engineeri
 			rel="stylesheet"
 		/>
 		<title>{title}</title>
+		<slot name="head" />
 	</head>
 	<body>
 		<script is:inline>

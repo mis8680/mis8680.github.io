@@ -1,0 +1,32 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" rx="32" fill="#07131E"/>
+  <rect width="1200" height="630" rx="32" fill="url(#paint0_radial_1_2)"/>
+  <rect width="1200" height="630" rx="32" fill="url(#paint1_radial_1_2)"/>
+  <rect x="44" y="44" width="1112" height="542" rx="28" fill="url(#paint2_linear_1_2)" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <circle cx="948" cy="148" r="132" fill="#F08C5A" fill-opacity="0.18"/>
+  <circle cx="222" cy="518" r="176" fill="#4CD3C2" fill-opacity="0.14"/>
+  <rect x="92" y="92" width="156" height="48" rx="24" fill="#0F172A" fill-opacity="0.78" stroke="#4CD3C2" stroke-opacity="0.34"/>
+  <circle cx="122" cy="116" r="8" fill="#4CD3C2"/>
+  <text x="144" y="123" fill="#9FEAE0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="0.18em">PORTFOLIO</text>
+  <text x="92" y="252" fill="#F5F7FA" font-family="Inter, Arial, sans-serif" font-size="74" font-weight="700">Insu Mun</text>
+  <text x="92" y="325" fill="#F08C5A" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="600">Product Designer &amp; Front-End Engineer</text>
+  <text x="92" y="396" fill="#D5DEE8" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500">Thoughtful digital experiences, interface systems,</text>
+  <text x="92" y="436" fill="#D5DEE8" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500">and production-ready web craft.</text>
+  <rect x="92" y="486" width="426" height="68" rx="34" fill="#08121D" fill-opacity="0.72" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <text x="126" y="529" fill="#F5F7FA" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600">mis8680.github.io</text>
+  <defs>
+    <radialGradient id="paint0_radial_1_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(196 118) rotate(39.1269) scale(763.422 705.523)">
+      <stop stop-color="#133B56"/>
+      <stop offset="1" stop-color="#07131E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="paint1_radial_1_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1024 80) rotate(125.236) scale(617.59 644.531)">
+      <stop stop-color="#F08C5A" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#07131E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="paint2_linear_1_2" x1="140" y1="108" x2="1048" y2="562" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E2233"/>
+      <stop offset="0.5" stop-color="#0B1825"/>
+      <stop offset="1" stop-color="#08131D"/>
+    </linearGradient>
+  </defs>
+</svg>
